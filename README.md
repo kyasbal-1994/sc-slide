@@ -1,17 +1,29 @@
-## Typescript project boilerplate for grimoirejs
+# We are javascripters LT会 登壇資料
 
-This project provides you a simple starting point to make a plugin for [Grimoire.js](https://grimoire.gl).
+## スライドの操作方法
 
-You don't need to know what this project do for a plugin suitable to grimoire.js. However, you can refer [the plugin specification(Currently written in only japanese.)](https://grimoire.gl/guide/plugin-specification.html)
+方向キーの左右で動きます
+なお、**クソ重いです**。**GPUの備わっている文明的なデバイスでご覧ください**
 
-## Usage
+## ビルド方法
 
-1. Clone this project(Or just download by zip file.)
+```
+npm i
+npm run build
+```
 
-1. `npm install` to install dependencies.(Or you can use `yarn` to install faster.)
+**async/awaitがデフォで使えるNodeのバージョンじゃないと動きません。自分のローカルは7.10.0**
 
-1. Now you can use `npm start` to watch task(Automatically build start when you change source files) and `npm run build` to just build.
+Webサーバーなどを立てて`index.html`を参照してください。　**ファイルスキームでは動きません**
 
-1. You must rename the name field of package.json to publish the package. **(Name must begin with `grimoirejs`)**
 
-1. `/src` folder is source folder all Typescript files should contained. And **converter** files and **component** files should stored in `/src/Converters` and `/src/Components`.
+## 使用しているパッケージなど
+
+* grimoirejs <- コアのライブラリ
+* grimoirejs-math <- 数学ライブラリ
+* grimoirejs-fundamental <- grimoireのレンダラープラグイン
+* grimoirejs-forward-shading <- シェーディングやライトのプラグイン
+* grimoirejs-gltf <- モデル読み込みプラグイン
+* grimoirejs-slide-system(謎) <-今回のスライド作成用に作ったGrimoire用スライド作成プラグイン
+
+その他情報などは、[公式サイト](https://grimoire.gl)にどうぞ。また、OSS活動に興味のある方、ディスカッションだけでも参加したい方は、公式サイトからslackへどうぞお入りください。あと、良いと思ったら[コアレポジトリ](https://github.com/GrimoireGL/GrimoireJS)にスターしといてください。
